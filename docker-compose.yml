@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  django:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./dockerfile/Dockerfile
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+
+  redis:
+    restart: on-failure
+    image: redis:latest
+    network_mode: host
+    ports:
+      - "6379:6379"
+
