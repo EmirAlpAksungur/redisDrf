@@ -11,4 +11,5 @@ RUN pip install -r requirements.txt
 COPY todoproject .
 RUN python3 manage.py makemigrations
 RUN python3 manage.py migrate
+#RUN python3 manage.py rqworker default
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
