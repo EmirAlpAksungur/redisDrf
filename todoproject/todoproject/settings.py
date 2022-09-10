@@ -45,7 +45,7 @@ RQ_QUEUES = {
     'default': {
     'HOST': 'redis',
     'PORT': 6379,
-    'DB': 1,
+    'DB': 0,
     }
 }
 MIDDLEWARE = [

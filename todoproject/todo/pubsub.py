@@ -1,5 +1,5 @@
 import json
 import redis
-redis_client = redis.StrictRedis(host='redis', port=6379, db=1)
+redis_client = redis.StrictRedis(host='redis', port=6379, db=0)
 def publish_data_on_redis(json_data, channel_name):
     redis_client.publish(channel_name, json.dumps(json_data))
